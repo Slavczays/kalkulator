@@ -27,10 +27,10 @@ public class Kalkulator {
     private JButton button19;
     private JButton button20;
 
-    double a;
-    double b;
-    double wynik;
-    String operator;
+    private double a;
+    private double b;
+    private double wynik;
+    private String operator; //chociaż można by się pokusić o zastosowanie char zamiast String'a
 
     public Kalkulator() {
         ACButton.addActionListener(new ActionListener() {
@@ -150,6 +150,57 @@ public class Kalkulator {
                 a = Double.parseDouble(calcDisplay.getText());
                 operator = "-";
                 calcDisplay.setText("");
+            }
+        });
+        button12.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(calcDisplay.getText());
+                operator = "*";
+                calcDisplay.setText("");
+            }
+        });
+        button16.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(calcDisplay.getText());
+                operator = "/";
+                calcDisplay.setText("");
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               String backspace = null;
+
+               if(calcDisplay.getText().length() > 0)
+               {
+                   StringBuilder strB = new StringBuilder(calcDisplay.getText());
+                   strB.deleteCharAt(calcDisplay.getText().length() - 1);
+                   backspace = String.valueOf(strB);
+                   calcDisplay.setText(backspace);
+               }
+            }
+        });
+        button20.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              b = Double.parseDouble(calcDisplay.getText()); //tutaj zdecydowałem się na użycie instrukcji if ale mógłbym użyć też switch
+
+              if (operator == "+")
+              {
+                  wynik = a + b;
+                  calcDisplay.setText(String.valueOf(wynik));
+              } else if (operator == "-") {
+                  wynik = a - b;
+                  calcDisplay.setText(String.valueOf(wynik));
+              } else if (operator == "*") {
+                  wynik = a * b;
+                  calcDisplay.setText(String.valueOf(wynik));
+              } else if (operator == "/") {
+                  wynik = a / b;
+                  calcDisplay.setText(String.valueOf(wynik));
+              }
             }
         });
     }
