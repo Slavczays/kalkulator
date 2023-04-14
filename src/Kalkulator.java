@@ -2,6 +2,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Kalkulator obsługujący podstawowe działania matematyczne.
+ * @author Slawomir Ploszaj
+ * @version 1.0
+ */
 
 public class Kalkulator {
     private JPanel Kalkulator;
@@ -32,10 +37,15 @@ public class Kalkulator {
     private double wynik;
     private String operator; //chociaż można by się pokusić o zastosowanie char zamiast String'a
 
+    /**
+     * Konstruktor klasy Kalkulator.
+     * Odpowiada za GUI i przypisuje poszczególnym przyciskom odpowiednie akcje.
+     */
     public Kalkulator() {
         acButton.addActionListener(new ActionListener() {
             /**
-             * @param e the event to be processed
+             * Czyszczenie pola tekstowego kalkulatora
+             * @param e zdarzenie które ma być przetworzone
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -44,7 +54,8 @@ public class Kalkulator {
         });
         a7Button.addActionListener(new ActionListener() {
             /**
-             * @param e the event to be processed
+             * Wstawia cyfrę 7 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,66 +63,111 @@ public class Kalkulator {
             }
         });
         a8Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 8 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a8Button.getText());
             }
         });
         a9Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 9 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a9Button.getText());
             }
         });
         a4Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 4 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a4Button.getText());
             }
         });
         a5Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 5 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a5Button.getText());
             }
         });
         a6Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 6 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a6Button.getText());
             }
         });
         a1Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 1 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a1Button.getText());
             }
         });
         a2Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 2 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a2Button.getText());
             }
         });
         a3Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 3 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a3Button.getText());
             }
         });
         a00Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia double zero (00) w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a00Button.getText());
             }
         });
         a0Button.addActionListener(new ActionListener() {
+            /**
+             * Wstawia cyfrę 0 w pole tekstowe kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a0Button.getText());
             }
         });
         plusMinusButton.addActionListener(new ActionListener() {
+            /**
+             * zmienia znak (plus/minus) w polu tekstowym kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {                                           // wprowadziłem wyłapywanie wyjatków try catch dla operacji matematycznych - błędu który pojawi się gdy z klawiatury wprowadzona zostanie niedozwolony znak (np litera zamiast cyfry)
@@ -130,6 +186,10 @@ public class Kalkulator {
             }
         });
         dpointButton.addActionListener(new ActionListener() {
+            /**
+             * wstawia separator dziesiętny w polu tekstowym kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(!calcDisplay.getText().contains("."))
@@ -139,6 +199,11 @@ public class Kalkulator {
             }
         });
         plusButton.addActionListener(new ActionListener() {
+            /**
+             * wybór operacji dodawanie liczb
+             * @param e zdarzenie które ma być przetworzone
+             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -151,6 +216,11 @@ public class Kalkulator {
             }
         });
         minusButton.addActionListener(new ActionListener() {
+            /**
+             * wybór operacji odejmowanie liczb
+             * @param e zdarzenie które ma być przetworzone
+             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -163,6 +233,11 @@ public class Kalkulator {
             }
         });
         multiplyButton.addActionListener(new ActionListener() {
+            /**
+             * wybór operacji mnożenie liczb
+             * @param e zdarzenie które ma być przetworzone
+             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -175,6 +250,11 @@ public class Kalkulator {
             }
         });
         divideButton.addActionListener(new ActionListener() {
+            /**
+             * wybór operacji dzielenie liczb
+             * @param e zdarzenie które ma być przetworzone
+             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -187,6 +267,11 @@ public class Kalkulator {
             }
         });
         backspaceButton.addActionListener(new ActionListener() {
+            /**
+             * usuwanie wpisanego znaku w polu tekstowym kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                String backspace = null;
@@ -201,6 +286,11 @@ public class Kalkulator {
             }
         });
         equalButton.addActionListener(new ActionListener() {
+            /**
+             * wykonanie działania matematycznego i wyświetlenie wyniku w polu tekstowym kalkulatora
+             * @param e zdarzenie które ma być przetworzone
+             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -226,6 +316,10 @@ public class Kalkulator {
             }
         });
     }
+
+    /**
+     * Metoda główna klasy Kalkulator
+     */
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Kalkulator");
