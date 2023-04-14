@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="f3c3c" class="javax.swing.JButton" binding="ACButton" default-binding="true">
+      <component id="f3c3c" class="javax.swing.JButton" binding="acButton">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -19,7 +19,7 @@
           <text value="AC"/>
         </properties>
       </component>
-      <component id="774b6" class="javax.swing.JButton" binding="button2" default-binding="true">
+      <component id="774b6" class="javax.swing.JButton" binding="backspaceButton">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -27,7 +27,7 @@
           <text value="←"/>
         </properties>
       </component>
-      <component id="5e432" class="javax.swing.JButton" binding="button3" default-binding="true">
+      <component id="5e432" class="javax.swing.JButton" binding="plusMinusButton">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -35,7 +35,7 @@
           <text value="±"/>
         </properties>
       </component>
-      <component id="4172c" class="javax.swing.JButton" binding="button4" default-binding="true">
+      <component id="4172c" class="javax.swing.JButton" binding="plusButton">
         <constraints>
           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -67,7 +67,7 @@
           <text value="9"/>
         </properties>
       </component>
-      <component id="878ea" class="javax.swing.JButton" binding="button8" default-binding="true">
+      <component id="878ea" class="javax.swing.JButton" binding="minusButton">
         <constraints>
           <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -99,7 +99,7 @@
           <text value="6"/>
         </properties>
       </component>
-      <component id="7ee68" class="javax.swing.JButton" binding="button12" default-binding="true">
+      <component id="7ee68" class="javax.swing.JButton" binding="multiplyButton">
         <constraints>
           <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -131,7 +131,7 @@
           <text value="3"/>
         </properties>
       </component>
-      <component id="6335c" class="javax.swing.JButton" binding="button16" default-binding="true">
+      <component id="6335c" class="javax.swing.JButton" binding="divideButton">
         <constraints>
           <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -155,7 +155,7 @@
           <text value="0"/>
         </properties>
       </component>
-      <component id="23ad1" class="javax.swing.JButton" binding="button19" default-binding="true">
+      <component id="23ad1" class="javax.swing.JButton" binding="dpointButton">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -163,7 +163,7 @@
           <text value="."/>
         </properties>
       </component>
-      <component id="74b7c" class="javax.swing.JButton" binding="button20" default-binding="true">
+      <component id="74b7c" class="javax.swing.JButton" binding="equalButton">
         <constraints>
           <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

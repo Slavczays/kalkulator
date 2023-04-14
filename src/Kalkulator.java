@@ -6,26 +6,26 @@ import java.awt.event.ActionListener;
 public class Kalkulator {
     private JPanel Kalkulator;
     private JTextField calcDisplay;
-    private JButton ACButton;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
+    private JButton acButton;
+    private JButton backspaceButton;
+    private JButton plusMinusButton;
+    private JButton plusButton;
     private JButton a7Button;
     private JButton a8Button;
     private JButton a9Button;
-    private JButton button8;
+    private JButton minusButton;
     private JButton a4Button;
     private JButton a5Button;
     private JButton a6Button;
-    private JButton button12;
+    private JButton multiplyButton;
     private JButton a1Button;
     private JButton a2Button;
     private JButton a3Button;
-    private JButton button16;
+    private JButton divideButton;
     private JButton a00Button;
     private JButton a0Button;
-    private JButton button19;
-    private JButton button20;
+    private JButton dpointButton;
+    private JButton equalButton;
 
     private double a;
     private double b;
@@ -33,7 +33,7 @@ public class Kalkulator {
     private String operator; //chociaż można by się pokusić o zastosowanie char zamiast String'a
 
     public Kalkulator() {
-        ACButton.addActionListener(new ActionListener() {
+        acButton.addActionListener(new ActionListener() {
             /**
              * @param e the event to be processed
              */
@@ -111,7 +111,7 @@ public class Kalkulator {
                 calcDisplay.setText(calcDisplay.getText() + a0Button.getText());
             }
         });
-        button3.addActionListener(new ActionListener() {
+        plusMinusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(calcDisplay.getText().contains("."))
@@ -127,16 +127,16 @@ public class Kalkulator {
                 }
             }
         });
-        button19.addActionListener(new ActionListener() {
+        dpointButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(!calcDisplay.getText().contains("."))
                 {
-                    calcDisplay.setText(calcDisplay.getText() + button19.getText());
+                    calcDisplay.setText(calcDisplay.getText() + dpointButton.getText());
                 }
             }
         });
-        button4.addActionListener(new ActionListener() {
+        plusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 a = Double.parseDouble(calcDisplay.getText());
@@ -144,7 +144,7 @@ public class Kalkulator {
                 calcDisplay.setText("");
             }
         });
-        button8.addActionListener(new ActionListener() {
+        minusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 a = Double.parseDouble(calcDisplay.getText());
@@ -152,7 +152,7 @@ public class Kalkulator {
                 calcDisplay.setText("");
             }
         });
-        button12.addActionListener(new ActionListener() {
+        multiplyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 a = Double.parseDouble(calcDisplay.getText());
@@ -160,15 +160,15 @@ public class Kalkulator {
                 calcDisplay.setText("");
             }
         });
-        button16.addActionListener(new ActionListener() {
+        divideButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 a = Double.parseDouble(calcDisplay.getText());
                 operator = "/";
-                calcDisplay.setText("");
+                calcDisplay.setText(""); //zastanawiałem się czy nie wstawić tutaj wyłąpywania wyjątku dzielenia przez 0 (try catch) ale z tego co zaobserwowałem to java nie rzuca tutaj wyjątkiem bo nie traktuje dzielenia przez 0 jako klasycznego błędu a zwraca wartość Infinity (i taka włąśnie wartość wyświetla sie na wyświetlaczu mojego kalkulatora
             }
         });
-        button2.addActionListener(new ActionListener() {
+        backspaceButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                String backspace = null;
@@ -182,7 +182,7 @@ public class Kalkulator {
                }
             }
         });
-        button20.addActionListener(new ActionListener() {
+        equalButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
               b = Double.parseDouble(calcDisplay.getText()); //tutaj zdecydowałem się na użycie instrukcji if ale mógłbym użyć też switch
