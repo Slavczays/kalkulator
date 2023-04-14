@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Kalkulator {
     private JPanel Kalkulator;
@@ -23,6 +25,29 @@ public class Kalkulator {
     private JButton a0Button;
     private JButton button19;
     private JButton button20;
+
+    public Kalkulator() {
+        ACButton.addActionListener(new ActionListener() {
+            /**
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText("");
+            }
+        });
+        a7Button.addActionListener(new ActionListener() {
+            /**
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+
+            }
+        });
+    }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Kalkulator");
