@@ -114,16 +114,18 @@ public class Kalkulator {
         plusMinusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(calcDisplay.getText().contains("."))
-                {
-                    double plusMinus = Double.parseDouble(calcDisplay.getText());
-                    plusMinus = plusMinus*-1;
-                    calcDisplay.setText(String.valueOf(plusMinus));
-                } else
-                {
-                    long plusMinusL = Long.parseLong(calcDisplay.getText());
-                    plusMinusL = plusMinusL*-1;
-                    calcDisplay.setText(String.valueOf(plusMinusL));
+                try {                                           // wprowadziłem wyłapywanie wyjatków try catch dla operacji matematycznych - błędu który pojawi się gdy z klawiatury wprowadzona zostanie niedozwolony znak (np litera zamiast cyfry)
+                    if (calcDisplay.getText().contains(".")) {
+                        double plusMinusD = Double.parseDouble(calcDisplay.getText());
+                        plusMinusD = plusMinusD * -1;
+                        calcDisplay.setText(String.valueOf(plusMinusD));
+                    } else {
+                        long plusMinusL = Long.parseLong(calcDisplay.getText());
+                        plusMinusL = plusMinusL * -1;
+                        calcDisplay.setText(String.valueOf(plusMinusL));
+                    }
+                } catch (NumberFormatException ex) {
+                    calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
                 }
             }
         });
@@ -139,33 +141,49 @@ public class Kalkulator {
         plusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
                 a = Double.parseDouble(calcDisplay.getText());
                 operator = "+";
                 calcDisplay.setText("");
+                } catch (NumberFormatException ex) {
+                    calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
+                }
             }
         });
         minusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
                 a = Double.parseDouble(calcDisplay.getText());
                 operator = "-";
                 calcDisplay.setText("");
+                } catch (NumberFormatException ex) {
+                    calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
+                }
             }
         });
         multiplyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
                 a = Double.parseDouble(calcDisplay.getText());
                 operator = "*";
                 calcDisplay.setText("");
+                } catch (NumberFormatException ex) {
+                    calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
+                }
             }
         });
         divideButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
                 a = Double.parseDouble(calcDisplay.getText());
                 operator = "/";
                 calcDisplay.setText(""); //zastanawiałem się czy nie wstawić tutaj wyłąpywania wyjątku dzielenia przez 0 (try catch) ale z tego co zaobserwowałem to java nie rzuca tutaj wyjątkiem bo nie traktuje dzielenia przez 0 jako klasycznego błędu a zwraca wartość Infinity (i taka włąśnie wartość wyświetla sie na wyświetlaczu mojego kalkulatora
+                } catch (NumberFormatException ex) {
+                    calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
+                }
             }
         });
         backspaceButton.addActionListener(new ActionListener() {
@@ -185,22 +203,26 @@ public class Kalkulator {
         equalButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
               b = Double.parseDouble(calcDisplay.getText()); //tutaj zdecydowałem się na użycie instrukcji if ale mógłbym użyć też switch
 
-              if (operator == "+")
+              if (operator.equals("+"))   //gdybym zastosował zmienną operator jako char mógłbym porównać to poprzez "==" czyli if (operator == "+")
               {
                   wynik = a + b;
                   calcDisplay.setText(String.valueOf(wynik));
-              } else if (operator == "-") {
+              } else if (operator.equals("-")) {
                   wynik = a - b;
                   calcDisplay.setText(String.valueOf(wynik));
-              } else if (operator == "*") {
+              } else if (operator.equals("*")) {
                   wynik = a * b;
                   calcDisplay.setText(String.valueOf(wynik));
-              } else if (operator == "/") {
+              } else if (operator.equals("/")) {
                   wynik = a / b;
                   calcDisplay.setText(String.valueOf(wynik));
               }
+                } catch (NumberFormatException ex) {
+                    calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
+                }
             }
         });
     }
