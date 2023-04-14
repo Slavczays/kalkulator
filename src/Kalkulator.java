@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class Kalkulator {
     private JPanel Kalkulator;
     private JTextField calcDisplay;
@@ -25,6 +26,11 @@ public class Kalkulator {
     private JButton a0Button;
     private JButton button19;
     private JButton button20;
+
+    double a;
+    double b;
+    double wynik;
+    String operator;
 
     public Kalkulator() {
         ACButton.addActionListener(new ActionListener() {
@@ -103,6 +109,47 @@ public class Kalkulator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a0Button.getText());
+            }
+        });
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(calcDisplay.getText().contains("."))
+                {
+                    double plusMinus = Double.parseDouble(calcDisplay.getText());
+                    plusMinus = plusMinus*-1;
+                    calcDisplay.setText(String.valueOf(plusMinus));
+                } else
+                {
+                    long plusMinusL = Long.parseLong(calcDisplay.getText());
+                    plusMinusL = plusMinusL*-1;
+                    calcDisplay.setText(String.valueOf(plusMinusL));
+                }
+            }
+        });
+        button19.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!calcDisplay.getText().contains("."))
+                {
+                    calcDisplay.setText(calcDisplay.getText() + button19.getText());
+                }
+            }
+        });
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(calcDisplay.getText());
+                operator = "+";
+                calcDisplay.setText("");
+            }
+        });
+        button8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(calcDisplay.getText());
+                operator = "-";
+                calcDisplay.setText("");
             }
         });
     }
