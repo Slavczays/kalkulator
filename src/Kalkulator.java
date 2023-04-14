@@ -42,9 +42,19 @@ public class Kalkulator {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-
-
-
+                calcDisplay.setText(calcDisplay.getText() + a7Button.getText());
+            }
+        });
+        a8Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a8Button.getText());
+            }
+        });
+        a9Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a9Button.getText());
             }
         });
     }
