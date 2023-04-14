@@ -57,6 +57,54 @@ public class Kalkulator {
                 calcDisplay.setText(calcDisplay.getText() + a9Button.getText());
             }
         });
+        a4Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a4Button.getText());
+            }
+        });
+        a5Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a5Button.getText());
+            }
+        });
+        a6Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a6Button.getText());
+            }
+        });
+        a1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a1Button.getText());
+            }
+        });
+        a2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a2Button.getText());
+            }
+        });
+        a3Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a3Button.getText());
+            }
+        });
+        a00Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a00Button.getText());
+            }
+        });
+        a0Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcDisplay.setText(calcDisplay.getText() + a0Button.getText());
+            }
+        });
     }
 
     public static void main(String[] args) {
