@@ -45,7 +45,7 @@ public class Kalkulator {
         acButton.addActionListener(new ActionListener() {
             /**
              * Czyszczenie pola tekstowego kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -55,7 +55,7 @@ public class Kalkulator {
         a7Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 7 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,7 +65,7 @@ public class Kalkulator {
         a8Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 8 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,7 +75,7 @@ public class Kalkulator {
         a9Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 9 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,7 +85,7 @@ public class Kalkulator {
         a4Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 4 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -95,7 +95,7 @@ public class Kalkulator {
         a5Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 5 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,7 +105,7 @@ public class Kalkulator {
         a6Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 6 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -115,7 +115,7 @@ public class Kalkulator {
         a1Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 1 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -125,7 +125,7 @@ public class Kalkulator {
         a2Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 2 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -135,7 +135,7 @@ public class Kalkulator {
         a3Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 3 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -145,7 +145,7 @@ public class Kalkulator {
         a00Button.addActionListener(new ActionListener() {
             /**
              * Wstawia double zero (00) w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -155,7 +155,7 @@ public class Kalkulator {
         a0Button.addActionListener(new ActionListener() {
             /**
              * Wstawia cyfrę 0 w pole tekstowe kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -165,8 +165,9 @@ public class Kalkulator {
         plusMinusButton.addActionListener(new ActionListener() {
             /**
              * zmienia znak (plus/minus) w polu tekstowym kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -188,7 +189,7 @@ public class Kalkulator {
         dpointButton.addActionListener(new ActionListener() {
             /**
              * wstawia separator dziesiętny w polu tekstowym kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -201,8 +202,9 @@ public class Kalkulator {
         plusButton.addActionListener(new ActionListener() {
             /**
              * wybór operacji dodawanie liczb
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -218,8 +220,9 @@ public class Kalkulator {
         minusButton.addActionListener(new ActionListener() {
             /**
              * wybór operacji odejmowanie liczb
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -235,8 +238,9 @@ public class Kalkulator {
         multiplyButton.addActionListener(new ActionListener() {
             /**
              * wybór operacji mnożenie liczb
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -252,8 +256,9 @@ public class Kalkulator {
         divideButton.addActionListener(new ActionListener() {
             /**
              * wybór operacji dzielenie liczb
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -269,8 +274,9 @@ public class Kalkulator {
         backspaceButton.addActionListener(new ActionListener() {
             /**
              * usuwanie wpisanego znaku w polu tekstowym kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -288,8 +294,9 @@ public class Kalkulator {
         equalButton.addActionListener(new ActionListener() {
             /**
              * wykonanie działania matematycznego i wyświetlenie wyniku w polu tekstowym kalkulatora
-             * @param e zdarzenie które ma być przetworzone
+             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
              * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
+             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
              */
             @Override
             public void actionPerformed(ActionEvent e) {
