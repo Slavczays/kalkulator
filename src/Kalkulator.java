@@ -193,9 +193,9 @@ public class Kalkulator {
 
                if(calcDisplay.getText().length() > 0)
                {
-                   StringBuilder strB = new StringBuilder(calcDisplay.getText());
-                   strB.deleteCharAt(calcDisplay.getText().length() - 1);
-                   backspace = String.valueOf(strB);
+                   StringBuilder stringB = new StringBuilder(calcDisplay.getText());
+                   stringB.deleteCharAt(calcDisplay.getText().length() - 1);
+                   backspace = String.valueOf(stringB);
                    calcDisplay.setText(backspace);
                }
             }
