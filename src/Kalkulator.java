@@ -256,16 +256,18 @@ public class Kalkulator {
         zapiszDoPlikuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try{
+                try {
                     File plik = new File("Historia operacji.txt");
-                    FileWriter writer = new FileWriter(plik, true);  //FileWriter - bo pozwala dopisywać do pliku
                     if (!plik.exists()) {
-                        writer.write("\nHistoria operacji matematycznych:");
+                        FileWriter writer = new FileWriter(plik);
+                        writer.write("Historia operacji matematycznych:");
+                        writer.close();
                     }
-                    writer.write("\nWynik:"+wynik);
+                    FileWriter writer = new FileWriter(plik, true);
+                    writer.write("\nWynik:" + wynik);
                     writer.close();
-                    JOptionPane.showMessageDialog(null,"Zapisano do pliku historii");
-            }
+                    JOptionPane.showMessageDialog(null, "Zapisano do pliku historii");
+                }
                 catch(IOException f)
                 {
                     JOptionPane.showMessageDialog(null,"Błąd zapisu do pliku historii");
