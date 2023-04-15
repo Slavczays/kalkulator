@@ -257,10 +257,10 @@ public class Kalkulator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    File plik = new File("Historia operacji.txt");
+                    File plik = new File("Wyniki.txt");
                     if (!plik.exists()) {
                         FileWriter writer = new FileWriter(plik);
-                        writer.write("Historia operacji matematycznych:");
+                        writer.write("Historia wyników obliczeń:");
                         writer.close();
                     }
                     FileWriter writer = new FileWriter(plik, true);
