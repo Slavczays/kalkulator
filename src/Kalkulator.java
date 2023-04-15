@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -256,12 +257,12 @@ public class Kalkulator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    FileWriter writer = new FileWriter("Historia operacji.txt", true);  //FileWriter - bo pozwala dopisywanie do pliku
-                    writer.write("Historia operacji matematycznych:");
-                    writer.write(String.valueOf(wynik));
-
-
-
+                    File plik = new File("Historia operacji.txt");
+                    FileWriter writer = new FileWriter(plik, true);  //FileWriter - bo pozwala dopisywać do pliku
+                    if (!plik.exists()) {
+                        writer.write("\nHistoria operacji matematycznych:");
+                    }
+                    writer.write("\nWynik:"+wynik);
                     writer.close();
                     JOptionPane.showMessageDialog(null,"Zapisano do pliku historii");
             }
