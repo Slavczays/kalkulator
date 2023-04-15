@@ -6,3 +6,5 @@ Działanie:14.0
 Działanie:14.0
 Działanie:13332.0
 Wynik:0.0
+Wynik:0.0
+Wynik:0.0
