@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -230,9 +231,9 @@ public class Kalkulator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-              b = Double.parseDouble(calcDisplay.getText()); //tutaj zdecydowałem się na użycie instrukcji if ale mógłbym użyć też switch
+              b = Double.parseDouble(calcDisplay.getText());
 
-              if (operator.equals("+"))   //gdybym zastosował zmienną operator jako char mógłbym porównać to poprzez "==" czyli if (operator == "+")
+              if (operator.equals("+"))   //alternatywnie switch
               {
                   wynik = a + b;
                   calcDisplay.setText(String.valueOf(wynik));
@@ -255,11 +256,14 @@ public class Kalkulator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    PrintWriter out = new PrintWriter("Historia operacji.txt");
-                    out.println("Historia operacji matematycznych:");
+                    FileWriter writer = new FileWriter("Historia operacji.txt", true);  //FileWriter - bo pozwala dopisywanie do pliku
+                    writer.write("Historia operacji matematycznych:");
+                    writer.write(String.valueOf(wynik));
 
-                    out.close();
-                    JOptionPane.showMessageDialog(null,"Operację zapisano do pliku historii");
+
+
+                    writer.close();
+                    JOptionPane.showMessageDialog(null,"Zapisano do pliku historii");
             }
                 catch(IOException f)
                 {
