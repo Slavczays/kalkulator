@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Kalkulator obsługujący podstawowe działania matematyczne.
@@ -31,6 +33,7 @@ public class Kalkulator {
     private JButton a0Button;
     private JButton dpointButton;
     private JButton equalButton;
+    private JButton zapiszDoPlikuButton;
 
     private double a;
     private double b;
@@ -319,6 +322,19 @@ public class Kalkulator {
               }
                 } catch (NumberFormatException ex) {
                     calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
+                }
+            }
+        });
+        zapiszDoPlikuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    PrintWriter out = new PrintWriter("Operacje.txt");
+                    out.println("Historia operacji matematycznych:");
+            }
+                catch(IOException f)
+                {
+                    JOptionPane.showMessageDialog(null,"Błąd zapisu do pliku historii");
                 }
             }
         });

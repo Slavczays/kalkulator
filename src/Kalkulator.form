@@ -131,18 +131,6 @@
           <text value="="/>
         </properties>
       </component>
-      <component id="75f07" class="javax.swing.JTextField" binding="calcDisplay">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="300" height="60"/>
-            <preferred-size width="300" height="68"/>
-            <maximum-size width="300" height="60"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font name="Arial" size="20" style="0"/>
-        </properties>
-      </component>
       <component id="8ae64" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -192,6 +180,26 @@
         </constraints>
         <properties>
           <text value="÷"/>
+        </properties>
+      </component>
+      <component id="75f07" class="javax.swing.JTextField" binding="calcDisplay">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="300" height="60"/>
+            <preferred-size width="300" height="68"/>
+            <maximum-size width="300" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Arial" size="20" style="0"/>
+        </properties>
+      </component>
+      <component id="efb24" class="javax.swing.JButton" binding="zapiszDoPlikuButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zapisz do pliku"/>
         </properties>
       </component>
     </children>
