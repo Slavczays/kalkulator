@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Kalkulator obsługujący podstawowe działania matematyczne.
+ * Kalkulator obsługujący podstawowe działania matematyczne a także zapis do pliku historii wykonanych operacji
  * @author Slawomir Ploszaj
  * @version 1.0
  */
@@ -38,7 +38,7 @@ public class Kalkulator {
     private double a;
     private double b;
     private double wynik;
-    private String operator; //chociaż można by się pokusić o zastosowanie char zamiast String'a
+    private String operator; //ewentualnie typ char
 
     /**
      * Konstruktor klasy Kalkulator.
@@ -46,135 +46,94 @@ public class Kalkulator {
      */
     public Kalkulator() {
         acButton.addActionListener(new ActionListener() {
-            /**
-             * Czyszczenie pola tekstowego kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText("");
             }
         });
         a7Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 7 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a7Button.getText());
             }
         });
         a8Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 8 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a8Button.getText());
             }
         });
         a9Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 9 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a9Button.getText());
             }
         });
         a4Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 4 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a4Button.getText());
             }
         });
         a5Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 5 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a5Button.getText());
             }
         });
         a6Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 6 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a6Button.getText());
             }
         });
         a1Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 1 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a1Button.getText());
             }
         });
         a2Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 2 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a2Button.getText());
             }
         });
         a3Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 3 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a3Button.getText());
             }
         });
         a00Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia double zero (00) w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a00Button.getText());
             }
         });
         a0Button.addActionListener(new ActionListener() {
-            /**
-             * Wstawia cyfrę 0 w pole tekstowe kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 calcDisplay.setText(calcDisplay.getText() + a0Button.getText());
             }
         });
         plusMinusButton.addActionListener(new ActionListener() {
-            /**
-             * zmienia znak (plus/minus) w polu tekstowym kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
-             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {                                           // wprowadziłem wyłapywanie wyjatków try catch dla operacji matematycznych - błędu który pojawi się gdy z klawiatury wprowadzona zostanie niedozwolony znak (np litera zamiast cyfry)
+                try {                                           // try catch gdy dane z klawiatury nie są cyfrą
                     if (calcDisplay.getText().contains(".")) {
                         double plusMinusD = Double.parseDouble(calcDisplay.getText());
                         plusMinusD = plusMinusD * -1;
@@ -190,10 +149,7 @@ public class Kalkulator {
             }
         });
         dpointButton.addActionListener(new ActionListener() {
-            /**
-             * wstawia separator dziesiętny w polu tekstowym kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(!calcDisplay.getText().contains("."))
@@ -203,12 +159,7 @@ public class Kalkulator {
             }
         });
         plusButton.addActionListener(new ActionListener() {
-            /**
-             * wybór operacji dodawanie liczb
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
-             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -221,12 +172,7 @@ public class Kalkulator {
             }
         });
         minusButton.addActionListener(new ActionListener() {
-            /**
-             * wybór operacji odejmowanie liczb
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
-             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -239,12 +185,7 @@ public class Kalkulator {
             }
         });
         multiplyButton.addActionListener(new ActionListener() {
-            /**
-             * wybór operacji mnożenie liczb
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
-             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -257,30 +198,20 @@ public class Kalkulator {
             }
         });
         divideButton.addActionListener(new ActionListener() {
-            /**
-             * wybór operacji dzielenie liczb
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
-             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                 a = Double.parseDouble(calcDisplay.getText());
                 operator = "/";
-                calcDisplay.setText(""); //zastanawiałem się czy nie wstawić tutaj wyłąpywania wyjątku dzielenia przez 0 (try catch) ale z tego co zaobserwowałem to java nie rzuca tutaj wyjątkiem bo nie traktuje dzielenia przez 0 jako klasycznego błędu a zwraca wartość Infinity (i taka włąśnie wartość wyświetla sie na wyświetlaczu mojego kalkulatora
+                calcDisplay.setText(""); // bez try  catch bo java wyrzuca Infinity
                 } catch (NumberFormatException ex) {
                     calcDisplay.setText("Błąd! Wprowadzono niepoprawne dane.");
                 }
             }
         });
         backspaceButton.addActionListener(new ActionListener() {
-            /**
-             * usuwanie wpisanego znaku w polu tekstowym kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
-             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                String backspace = null;
@@ -295,12 +226,7 @@ public class Kalkulator {
             }
         });
         equalButton.addActionListener(new ActionListener() {
-            /**
-             * wykonanie działania matematycznego i wyświetlenie wyniku w polu tekstowym kalkulatora
-             * @param e obiekt klasy ActionListener wywołany po naciśnięciu przycisku
-             * wprowadzone wyłapywanie wyjątków try catch dla błedów po niewłaściwym niedozowolonych znaków (np. liter zamiast cyfr)
-             * @throws NumberFormatException gdy użytkownik wprowadzi niepoprawne dane
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -329,8 +255,11 @@ public class Kalkulator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    PrintWriter out = new PrintWriter("Operacje.txt");
+                    PrintWriter out = new PrintWriter("Historia operacji.txt");
                     out.println("Historia operacji matematycznych:");
+
+                    out.close();
+                    JOptionPane.showMessageDialog(null,"Operację zapisano do pliku historii");
             }
                 catch(IOException f)
                 {
